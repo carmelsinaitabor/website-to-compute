@@ -20,7 +20,7 @@ jobs:
   notify:
     uses: carmelsinaitabor/bot-hub/.github/workflows/reusable_telegram.yml@main
     with:
-      event_title: ${{ github.event_name == 'issues' && format('Issue #{0} {1}: {2}', github.event.issue.number, github.event.action, github.event.issue.title) || (github.event_name == 'workflow_run' && format('Workflow {0} ({1})', github.event.workflow_run.name, github.event.workflow_run.conclusion) || inputs.message) }}
-      status: ${{ github.event_name == 'issues' && github.event.action || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion || 'test') }}
-      issue_number: ${{ github.event.issue.number != null && format('{0}', github.event.issue.number) || '' }}
+      event_title: "${{ github.event_name == 'issues' && format('Issue #{0} {1}: {2}', github.event.issue.number, github.event.action, github.event.issue.title) || (github.event_name == 'workflow_run' && format('Workflow {0} ({1})', github.event.workflow_run.name, github.event.workflow_run.conclusion) || inputs.message) }}"
+      status: "${{ github.event_name == 'issues' && github.event.action || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion || 'test') }}"
+      issue_number: "${{ github.event.issue.number != null && format('{0}', github.event.issue.number) || '' }}"
     secrets: inherit
