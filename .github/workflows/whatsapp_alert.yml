@@ -1,0 +1,27 @@
+name: WhatsApp Alert
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Test alert text"
+        required: false
+        type: string
+        default: "Manual WhatsApp alert test"
+  issues:
+    types: [opened, closed]
+  workflow_run:
+    workflows: ["Chief", "Coder", "Health 5AM", "Tester", "Weekly Stage", "Daily Devotional", "Daily Devo 2"]
+    types: [completed]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  notify:
+    uses: carmelsinaitabor/bot-hub/.github/workflows/reusable_whatsapp.yml@main
+    with:
+      event_title: ${{ github.event_name == 'issues' && format('Issue #{0} {1}: {2}', github.event.issue.number, github.event.action, github.event.issue.title) || (github.event_name == 'workflow_run' && format('Workflow {0} ({1})', github.event.workflow_run.name, github.event.workflow_run.conclusion) || inputs.message) }}
+      status: ${{ github.event_name == 'issues' && github.event.action || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion || 'test') }}
+      issue_number: ${{ github.event.issue.number != null && format('{0}', github.event.issue.number) || '' }}
+    secrets: inherit
