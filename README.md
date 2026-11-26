@@ -167,4 +167,5 @@ All helpers accept a short repository name (such as `tcm_basics`), a full `owner
 - **Check scheduled workflows and next-day queue (`tomorrowcheck`):**
   - `tomorrowcheck tcm_basics` — lists active workflows and recent `schedule` runs on `carmelsinaitabor/tcm_basics`
   - `tomorrowcheck` — checks scheduled runs and displays the tail of `source_devotionals.txt` on `carmelsinaitabor/bible_dailydevotional`
+  - `checkdevo` — Check the latest scheduled Daily Devotional run and step status
 <!-- BOT_CLI_HELPERS_END -->
