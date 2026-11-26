@@ -168,4 +168,24 @@ All helpers accept a short repository name (such as `tcm_basics`), a full `owner
   - `tomorrowcheck tcm_basics` — lists active workflows and recent `schedule` runs on `carmelsinaitabor/tcm_basics`
   - `tomorrowcheck` — checks scheduled runs and displays the tail of `source_devotionals.txt` on `carmelsinaitabor/bible_dailydevotional`
   - `checkdevo` — Check the latest scheduled Daily Devotional run and step status
+  - `addmusic` — Custom Cloud Shell CLI helper
+  - `adhoc` — Custom Cloud Shell CLI helper
+  - `checkchief` — Custom Cloud Shell CLI helper
+  - `checkrun` — Custom Cloud Shell CLI helper
+  - `checkwhatsapp` — Custom Cloud Shell CLI helper
+  - `checkworkflow` — Custom Cloud Shell CLI helper
+  - `csclean` — Custom Cloud Shell CLI helper
+  - `cslist` — Custom Cloud Shell CLI helper
+  - `csnuke` — Custom Cloud Shell CLI helper
+  - `csstop` — Custom Cloud Shell CLI helper
+  - `devo2` — Custom Cloud Shell CLI helper
+  - `devopull` — Custom Cloud Shell CLI helper
+  - `mixmusic` — Custom Cloud Shell CLI helper
+  - `mp3list` — Custom Cloud Shell CLI helper
+  - `readme` — Custom Cloud Shell CLI helper
+  - `synctelegram` — Sync telegram_alert.yml and Telegram secrets across all repositories
+  - `wkissue` — Custom Cloud Shell CLI helper
+  - `wkprev` — Custom Cloud Shell CLI helper
+  - `wkstage` — Custom Cloud Shell CLI helper
+  - `wkstatus` — Custom Cloud Shell CLI helper
 <!-- BOT_CLI_HELPERS_END -->
