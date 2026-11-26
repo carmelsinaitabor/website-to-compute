@@ -189,6 +189,16 @@ All helpers accept a short repository name (such as `tcm_basics`), a full `owner
   - `wkprev` — Custom Cloud Shell CLI helper
   - `wkstage` — Custom Cloud Shell CLI helper
   - `wkstatus` — Custom Cloud Shell CLI helper
+  - `ls` — Cloud Shell helper command `ls`
+  - `grep` — Cloud Shell helper command `grep`
+  - `fgrep` — Cloud Shell helper command `fgrep`
+  - `egrep` — Cloud Shell helper command `egrep`
+  - `ll` — Cloud Shell helper command `ll`
+  - `la` — Cloud Shell helper command `la`
+  - `l` — Cloud Shell helper command `l`
+  - `alert` — Cloud Shell helper command `alert`
+  - `_devo_gh_token` — Cloud Shell helper command `_devo_gh_token`
+  - `_resolve_carmel_repo` — Cloud Shell helper command `_resolve_carmel_repo`
 <!-- BOT_CLI_HELPERS_END -->
 
 ## Carmel Bot Alerts (`/chief` via Telegram)
