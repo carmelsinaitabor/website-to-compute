@@ -189,3 +189,9 @@ All helpers accept a short repository name (such as `tcm_basics`), a full `owner
   - `wkstage` — Custom Cloud Shell CLI helper
   - `wkstatus` — Custom Cloud Shell CLI helper
 <!-- BOT_CLI_HELPERS_END -->
+
+## Carmel Bot Alerts (`/chief` via Telegram)
+
+- **Assign a task to Chief:** Send `/chief <repo> <task>` in **Carmel Bot Alerts** (for example, `/chief bible_dailydevotional Check cover rotation warning`). Multi-line messages work too—line 1 becomes the issue title and subsequent lines become the issue body.
+- **List commands & repos:** Send `/chief help`.
+- **Timing & security:** GitHub Actions (`bot-hub/telegram_poller.yml`) polls Telegram automatically (typically every 5–15 minutes depending on GitHub's queue), ignores messages from any chat other than `TELEGRAM_CHAT_ID`, and replies with the created GitHub Issue link.
