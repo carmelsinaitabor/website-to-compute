@@ -184,6 +184,7 @@ All helpers accept a short repository name (such as `tcm_basics`), a full `owner
   - `mp3list` — Custom Cloud Shell CLI helper
   - `readme` — Custom Cloud Shell CLI helper
   - `synctelegram` — Sync telegram_alert.yml and Telegram secrets across all repositories
+  - `checktelegram` — Check recent runs and latest log of telegram_poller.yml in bot-hub
   - `wkissue` — Custom Cloud Shell CLI helper
   - `wkprev` — Custom Cloud Shell CLI helper
   - `wkstage` — Custom Cloud Shell CLI helper
