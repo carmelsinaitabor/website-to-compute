@@ -1,0 +1,26 @@
+name: Bot 2 - Coder (Patch PR Generator)
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Failed workflow run ID or issue tracking ID"
+        required: true
+        type: string
+      diagnosis:
+        description: "Root cause diagnosis from Chief bot"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  propose-fix-pr:
+    uses: carmelsinaitabor/bot-hub/.github/workflows/reusable_coder.yml@main
+    with:
+      run_id: ${{ inputs.run_id }}
+      diagnosis: ${{ inputs.diagnosis }}
+      target_file: "index.html"
+    secrets: inherit

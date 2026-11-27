@@ -1,0 +1,38 @@
+name: Bot 1 - Chief (Triage & Supervisor)
+
+on:
+  workflow_run:
+    workflows: ["Telegram Alert"]
+    types: [completed]
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "GitHub Issue number for Chief to triage"
+        required: false
+        default: ""
+        type: string
+      run_id:
+        description: "Optional failed workflow run ID to triage"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+jobs:
+  triage-failure:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure') ||
+      (github.event_name == 'issues' && !contains(github.event.issue.labels.*.name, 'bot-triage') && (github.event.action == 'opened' || github.event.label.name == 'auto-fix'))
+    uses: carmelsinaitabor/bot-hub/.github/workflows/reusable_chief.yml@main
+    with:
+      issue_number: ${{ github.event.inputs.issue_number || github.event.issue.number || '' }}
+      run_id: ${{ github.event.inputs.run_id || github.event.workflow_run.id || '' }}
+      coder_workflow_file: "bot_coder.yml"
+    secrets: inherit
